@@ -57,11 +57,9 @@ public class Main {
 
     Legion legion= new Legion();
     legion.elegirLider(miembros);
-    niños1.intentarAsustarA(comunes);
     legion.reportar();
 
     System.out.println("\n");
-    System.out.println("legion Asusta " + comunes);
 
 
 
@@ -69,4 +67,5 @@ public class Main {
 
 
   }
+
 }

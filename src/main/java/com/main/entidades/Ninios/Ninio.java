@@ -6,24 +6,21 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 
-public class Ninio extends Legion{
+public class Ninio {
+
 
   private int caramelos;
   private int adtitud;
   private Traje traje;
   private Maquillaje maquillaje;
 
-  public Ninio(String nombre,int poderDeSusto,int adtitud, Traje traje, Maquillaje maquillaje,int caramelos) {
-    super(nombre,poderDeSusto);
+  public Ninio(String nombre, int poderDeSusto , int adtitud, Traje traje, Maquillaje maquillaje,int caramelos) {
     this.adtitud = adtitud;
     this.traje = traje;
     this.maquillaje = maquillaje;
     this.caramelos = caramelos;
   }
 
-  public Ninio() {
-    super();
-  }
 
 
   public int getCaramelos() {
@@ -57,7 +54,7 @@ public class Ninio extends Legion{
 
 
   @Override
-  public String toString() { return "Ninio: " + this.getNombre()+ this.getPoderDeSusto() + ", adtitud=" + this.getAdtitud()+ "caramelos=" + this.caramelos + '}';
+  public String toString() { return "Ninio: " +", adtitud=" + this.getAdtitud()+ "caramelos=" + this.caramelos ;
   }
 
   public int capacidadDeSusto() {
@@ -73,12 +70,10 @@ public class Ninio extends Legion{
 
 
   public int intentarAsustar(Adulto adulto){
-    return this.caramelos += adulto.recibirSusto(this) + adulto.getTolerancia();
+    return this.caramelos + adulto.recibirSusto(this) + adulto.getTolerancia();
   }
 
-  public int intentarAsustarA(Adulto adulto){
-    return this.caramelos += adulto.recibirSusto(this) + adulto.getTolerancia() * 4;
-  }
+
 
   public int recibirCaramelos(int cantidad){
 

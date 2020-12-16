@@ -22,7 +22,7 @@ public class Abuelo extends com.main.entidades.Adultos.Adulto {
   @Override
   public int recibirSusto(Ninio ninios) {
 
-    return tolerancia = ninios.getCaramelos() / 2;
+    return tolerancia / 4;
 
 
   }

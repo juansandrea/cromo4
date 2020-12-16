@@ -21,7 +21,7 @@ public class Necio extends Adulto {
   }
 
   @Override
-  public int recibirSusto(Ninio ninios) {
+  public int recibirSusto(Ninio ninio) {
     return 0;
   }
 }

@@ -21,9 +21,9 @@ public class Comune extends com.main.entidades.Adultos.Adulto {
   }
 
   @Override
-  public int recibirSusto(Ninio ninios) {
-    if (ninios.capacidadDeSusto() > this.tolerancia)
-      return this.tolerancia + ninios.getCaramelos() / 2;
+  public int recibirSusto(Ninio ninio) {
+    if (ninio.capacidadDeSusto() > this.tolerancia)
+      return this.tolerancia / 2;
     else
       return 0;
 
