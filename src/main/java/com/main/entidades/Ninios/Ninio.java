@@ -3,16 +3,18 @@ package com.main.entidades.Ninios;
 import com.main.entidades.Adultos.Adulto;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
-public class Ninio {
+public class Ninio extends Legion{
 
   private int caramelos;
   private int adtitud;
   private Traje traje;
   private Maquillaje maquillaje;
 
-  public Ninio(int adtitud, Traje traje, Maquillaje maquillaje,int caramelos) {
+  public Ninio(String nombre,int poderDeSusto,int adtitud, Traje traje, Maquillaje maquillaje,int caramelos) {
+    super(nombre,poderDeSusto);
     this.adtitud = adtitud;
     this.traje = traje;
     this.maquillaje = maquillaje;
@@ -20,9 +22,8 @@ public class Ninio {
   }
 
   public Ninio() {
-
+    super();
   }
-
 
 
   public int getCaramelos() {
@@ -56,29 +57,33 @@ public class Ninio {
 
 
   @Override
-  public String toString() {
-    return "Ninio{" + ", adtitud=" + adtitud + ", traje=" + traje + ", maquillaje=" + maquillaje + '}';
+  public String toString() { return "Ninio: " + this.getNombre()+ this.getPoderDeSusto() + ", adtitud=" + this.getAdtitud()+ "caramelos=" + this.caramelos + '}';
   }
 
   public int capacidadDeSusto() {
 
     int totalSusto, totalSusto1;
     totalSusto = this.traje.getSusto() + this.maquillaje.getSusto();
-    totalSusto1 = this.adtitud;
+    totalSusto1 = this.adtitud * totalSusto;
 
-    return totalSusto * totalSusto1;
+    return totalSusto1;
   }
 
   
 
 
   public int intentarAsustar(Adulto adulto){
-
-    this.caramelos += this.caramelos + adulto.recibirSusto(this);
-
-    return caramelos;
+    return this.caramelos += adulto.recibirSusto(this) + adulto.getTolerancia();
   }
 
+  public int intentarAsustarA(Adulto adulto){
+    return this.caramelos += adulto.recibirSusto(this) + adulto.getTolerancia() * 4;
+  }
+
+  public int recibirCaramelos(int cantidad){
+
+   return cantidad;
+  }
 
   public int comer(int cantidad)throws CaramelosInsuficientesException{
     if(this.caramelos < cantidad){
@@ -92,22 +97,7 @@ public class Ninio {
 
 
 
-  public void elegirLider(ArrayList<Legion> miembros){
-    Legion elegirLider = null;
 
-    int mayorAdtitud = 9;
-    for (Legion lider : miembros){
-      if (lider.getAdtitud() >= mayorAdtitud){
-        mayorAdtitud = lider.getAdtitud();
-        elegirLider = lider;
-      }
-    }
-
-    System.out.println("El lider es = " + elegirLider.getNombre());
-
-
-
-  }
 
 
 

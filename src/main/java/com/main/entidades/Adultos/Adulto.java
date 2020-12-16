@@ -26,6 +26,6 @@ public abstract class Adulto {
   }
 
 
-  public abstract int recibirSusto(Ninio ninio);
+  public abstract int recibirSusto(Ninio ninios);
 
 }

@@ -7,11 +7,12 @@ public class Necio extends Adulto {
 
   private int tolerancia;
 
-  public Necio(int tolerancia) {
-    super(tolerancia);
+  public Necio() {
+
   }
 
-  public int getTolerancia() {
+
+    public int getTolerancia() {
     return this.tolerancia;
   }
 
@@ -20,8 +21,7 @@ public class Necio extends Adulto {
   }
 
   @Override
-  public int recibirSusto(Ninio ninio) {
+  public int recibirSusto(Ninio ninios) {
     return 0;
-
   }
 }

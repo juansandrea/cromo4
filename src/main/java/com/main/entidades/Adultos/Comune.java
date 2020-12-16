@@ -8,13 +8,8 @@ public class Comune extends com.main.entidades.Adultos.Adulto {
 
   private int tolerancia ;
 
-    public Comune(int tolerancia) { super(tolerancia);
+    public Comune() {
 
-  }
-
-
-  public Comune(){
-      this.tolerancia = 30;
   }
 
   public int getTolerancia() {
@@ -27,8 +22,8 @@ public class Comune extends com.main.entidades.Adultos.Adulto {
 
   @Override
   public int recibirSusto(Ninio ninios) {
-    if (ninios.capacidadDeSusto() > (tolerancia))
-      return tolerancia = ninios.getCaramelos() / 2;
+    if (ninios.capacidadDeSusto() > this.tolerancia)
+      return this.tolerancia + ninios.getCaramelos() / 2;
     else
       return 0;
 
