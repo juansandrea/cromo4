@@ -14,13 +14,22 @@ public class Ninio {
   private Traje traje;
   private Maquillaje maquillaje;
 
-  public Ninio(String nombre, int poderDeSusto , int adtitud, Traje traje, Maquillaje maquillaje,int caramelos) {
+
+  public Ninio(String nombre,int poderDeSusto , int adtitud, Traje traje, Maquillaje maquillaje,int caramelos) {
     this.adtitud = adtitud;
     this.traje = traje;
     this.maquillaje = maquillaje;
     this.caramelos = caramelos;
+
+
+
+
+
   }
 
+  public Ninio(ArrayList<Ninio> miembros) {
+
+  }
 
 
   public int getCaramelos() {
@@ -70,14 +79,16 @@ public class Ninio {
 
 
   public int intentarAsustar(Adulto adulto){
-    return this.caramelos + adulto.recibirSusto(this) + adulto.getTolerancia();
+
+    return this.caramelos + adulto.recibirSusto(this,true) + adulto.getTolerancia();
   }
 
 
 
   public int recibirCaramelos(int cantidad){
 
-   return cantidad;
+
+   return this.getCaramelos();
   }
 
   public int comer(int cantidad)throws CaramelosInsuficientesException{

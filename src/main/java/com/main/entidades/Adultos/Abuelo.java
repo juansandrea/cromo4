@@ -20,11 +20,10 @@ public class Abuelo extends com.main.entidades.Adultos.Adulto {
   }
 
   @Override
-  public int recibirSusto(Ninio ninios) {
-
-    return tolerancia / 4;
-
-
+  public int recibirSusto(Ninio ninios,boolean fueAsustado) {
+    fueAsustado = true;
+    int cambio = fueAsustado ? 1 : 0 ;
+    return cambio + tolerancia / 4;
   }
 
 
