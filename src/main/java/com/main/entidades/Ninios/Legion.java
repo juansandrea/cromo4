@@ -19,11 +19,10 @@ public class Legion {
     public Legion(ArrayList<Ninio> miembros) {
        this.miembros = miembros;
 
-    }
-
-    public Legion() {
 
     }
+
+
 
     public String getNombre() {
         return this.nombre;
@@ -45,15 +44,17 @@ public class Legion {
     }
 
     public void elegirLider(ArrayList<Ninio> miembros){
-        Legion legion = new Legion(miembros);
-        int mayorAdtitud = -9;
+        Ninio niño = new Ninio(miembros);
+        int mayorAdtitud = -999;
 
         for (Ninio lider : miembros)
             if (lider.getAdtitud() > mayorAdtitud) {
                 mayorAdtitud = lider.getAdtitud();
+                niño = lider;
+
 
             }
-        System.out.println("legion = " + legion.getNombre() );
+        System.out.println("Este es el lider de la Legion " + niño.getAdtitud() +" y sus Caramelos "+ niño.getCaramelos()  );
 
     }
 

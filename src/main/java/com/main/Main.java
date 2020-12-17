@@ -50,12 +50,12 @@ public class Main {
     ArrayList<Ninio> miembros = new ArrayList<>();
 
 
-    miembros.add(new Ninio("Bobby", 40,5, jason, maquillaje1, 1));
-    miembros.add(new Ninio("Richie", 15,3, winniepoh, maquillaje1, 1));
-    miembros.add(new Ninio("Bill", 25,5, sullivan, maquillaje1, 1));
-    miembros.add(new Ninio("Scott", 72,9, gerogebush, maquillaje1, 1));
+    miembros.add(new Ninio("Bobby", 40,5, jason, maquillaje1, 10));
+    miembros.add(new Ninio("Richie", 15,3, winniepoh, maquillaje1, 10));
+    miembros.add(new Ninio("Bill", 25,5, sullivan, maquillaje1, 10));
+    miembros.add(new Ninio("Scott", 72,9, gerogebush, maquillaje1, 10));
 
-    Legion legion= new Legion();
+    Legion legion= new Legion(miembros);
     legion.elegirLider(miembros);
     legion.reportar();
 
