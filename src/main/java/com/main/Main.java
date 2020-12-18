@@ -15,10 +15,10 @@ public class Main {
     Terrorifico gerogebush = new Terrorifico();
     Maquillaje maquillaje1 = new Maquillaje();
 
-    Ninio niños1 = new Ninio("Bobby",20,9,gerogebush,maquillaje1,10);
-    Ninio niños2 = new Ninio("Richie",20,5,sullivan,maquillaje1,10);
-    Ninio niños3 = new Ninio("Scott",20,5,jason,maquillaje1,10);
-    Ninio niños4 = new Ninio("Bill",20,5,winniepoh,maquillaje1,10);
+    Ninio niños1 = new Ninio("Bobby",4,gerogebush,maquillaje1,10);
+    Ninio niños2 = new Ninio("Richie",3,sullivan,maquillaje1,10);
+    Ninio niños3 = new Ninio("Scott",2,jason,maquillaje1,10);
+    Ninio niños4 = new Ninio("Bill",3,winniepoh,maquillaje1,10);
     Abuelo abuelos = new Abuelo();
     Comune comunes = new Comune();
     Necio necios = new Necio();
@@ -50,10 +50,10 @@ public class Main {
     ArrayList<Ninio> miembros = new ArrayList<>();
 
 
-    miembros.add(new Ninio("Bobby", 40,5, jason, maquillaje1, 10));
-    miembros.add(new Ninio("Richie", 15,3, winniepoh, maquillaje1, 10));
-    miembros.add(new Ninio("Bill", 25,5, sullivan, maquillaje1, 10));
-    miembros.add(new Ninio("Scott", 72,9, gerogebush, maquillaje1, 10));
+    miembros.add(new Ninio("Bobby",2, jason, maquillaje1, 10));
+    miembros.add(new Ninio("Richie",2, winniepoh, maquillaje1, 10));
+    miembros.add(new Ninio("Bill",3, sullivan, maquillaje1, 10));
+    miembros.add(new Ninio("Scott",4, gerogebush, maquillaje1, 10));
 
     Legion legion= new Legion(miembros);
     legion.elegirLider(miembros);

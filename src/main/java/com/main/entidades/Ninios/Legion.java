@@ -54,7 +54,7 @@ public class Legion {
 
 
             }
-        System.out.println("Este es el lider de la Legion " + niño.getAdtitud() +" y sus Caramelos "+ niño.getCaramelos()  );
+        System.out.println("Este es el lider de la Legion " +niño.getNombreniño()+" "+niño.getAdtitud() +" y sus Poder de susto: " + niño.capacidadDeSusto()  );
 
     }
 

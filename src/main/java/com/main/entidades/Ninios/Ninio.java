@@ -8,29 +8,35 @@ import java.util.Iterator;
 
 public class Ninio {
 
-
+  private String nombreniño;
   private int caramelos;
   private int adtitud;
   private Traje traje;
   private Maquillaje maquillaje;
 
 
-  public Ninio(String nombre,int poderDeSusto , int adtitud, Traje traje, Maquillaje maquillaje,int caramelos) {
+  public Ninio(String nombreniño, int adtitud, Traje traje, Maquillaje maquillaje,int caramelos) {
+    this.nombreniño = nombreniño;
     this.adtitud = adtitud;
     this.traje = traje;
     this.maquillaje = maquillaje;
     this.caramelos = caramelos;
+    capacidadDeSusto();
+  }
 
+  public Ninio(ArrayList<Ninio> miembros) {}
 
-
-
+  public Ninio() {
 
   }
 
-  public Ninio(ArrayList<Ninio> miembros) {
-
+  public String getNombreniño() {
+    return nombreniño;
   }
 
+  public void setNombreniño(String nombreniño) {
+    this.nombreniño = nombreniño;
+  }
 
   public int getCaramelos() {
     return this.caramelos;
@@ -80,16 +86,14 @@ public class Ninio {
 
   public int intentarAsustar(Adulto adulto){
 
-    return this.caramelos + adulto.recibirSusto(this,true) + adulto.getTolerancia();
+   return adulto.recibirSusto(1) ;
   }
 
 
 
-  public int recibirCaramelos(int cantidad){
 
 
-   return this.getCaramelos();
-  }
+  public void recibirCaramelos(int cantidad){ }
 
   public int comer(int cantidad)throws CaramelosInsuficientesException{
     if(this.caramelos < cantidad){

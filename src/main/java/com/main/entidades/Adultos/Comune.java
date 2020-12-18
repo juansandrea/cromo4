@@ -22,14 +22,11 @@ public class Comune extends com.main.entidades.Adultos.Adulto {
   }
 
   @Override
-  public int recibirSusto(Ninio ninio,boolean fueAsustado) {
-      fueAsustado = true;
-    if (ninio.capacidadDeSusto() > this.tolerancia)
-      return this.tolerancia / 2;
-    else
-      return 0;
+  public boolean recibirSusto(int fueAsustado) {
+     Ninio ninio = new Ninio();
+     if (ninio.capacidadDeSusto() > this.tolerancia)
+       tolerancia = ninio.getCaramelos()/2;
+      return true;
 
-
-
-}
+    }
 }

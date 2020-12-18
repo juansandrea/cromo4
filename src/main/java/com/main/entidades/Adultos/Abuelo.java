@@ -13,6 +13,7 @@ public class Abuelo extends com.main.entidades.Adultos.Adulto {
 
   public int getTolerancia() {
     return this.tolerancia;
+
   }
 
   public void setTolerancia(int tolerancia) {
@@ -20,10 +21,9 @@ public class Abuelo extends com.main.entidades.Adultos.Adulto {
   }
 
   @Override
-  public int recibirSusto(Ninio ninios,boolean fueAsustado) {
-    fueAsustado = true;
-    int cambio = fueAsustado ? 1 : 0 ;
-    return cambio + tolerancia / 4;
+  public boolean recibirSusto(int fueAsustado) {
+
+    return true;
   }
 
 

@@ -26,6 +26,6 @@ public abstract class Adulto {
   }
 
 
-  public abstract int recibirSusto(Ninio ninios,boolean fueAsustado);
+  public abstract boolean recibirSusto(int fueAsustado);
 
 }

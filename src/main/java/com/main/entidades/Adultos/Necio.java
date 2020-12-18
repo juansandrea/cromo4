@@ -21,8 +21,8 @@ public class Necio extends Adulto {
   }
 
   @Override
-  public int recibirSusto(Ninio ninio,boolean fueAsustado) {
-    fueAsustado = false;
-    return 0;
+  public boolean recibirSusto(int fueAsustado) {
+
+    return false;
   }
 }
