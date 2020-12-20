@@ -5,6 +5,7 @@ import com.main.entidades.Adultos.Comune;
 import com.main.entidades.Adultos.Necio;
 import com.main.entidades.Ninios.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
@@ -20,32 +21,19 @@ public class Main {
     Ninio niños3 = new Ninio("Scott",2,jason,maquillaje1,10);
     Ninio niños4 = new Ninio("Bill",3,winniepoh,maquillaje1,10);
     Abuelo abuelos = new Abuelo();
+    Abuelo abuelos1 = new Abuelo();
+    Abuelo abuelos2 = new Abuelo();
     Comune comunes = new Comune();
     Necio necios = new Necio();
 
 
-
+    niños1.intentarAsustar(comunes);
+    niños1.intentarAsustar(abuelos);
+    niños1.intentarAsustar(necios);
     System.out.println("La Capacidad de Asustar Del Niño es: " + niños1.capacidadDeSusto());
-    System.out.println("La cantidad de Caramelos que tiene el niño: " + niños1.intentarAsustar(abuelos));
     System.out.println("El Niño come:  " + niños1.comer(0) + " Caramelos");
 
-    System.out.println("===============================================================================");
 
-    System.out.println("La Capacidad de Asustar Del Niño es: " + niños2.capacidadDeSusto());
-    System.out.println("La cantidad de Caramelos que tiene el niño: " + niños2.intentarAsustar(comunes));
-    System.out.println("El Niño come:  " + niños1.comer(0) + " Caramelos");
-
-    System.out.println("===============================================================================");
-
-    System.out.println("La Capacidad de Asustar Del Niño es: " + niños3.capacidadDeSusto());
-    System.out.println("La cantidad de Caramelos que tiene el niño: " + niños3.intentarAsustar(necios));
-    System.out.println("El Niño come:  " + niños1.comer(0) + " Caramelos");
-
-    System.out.println("===============================================================================");
-
-    System.out.println("La Capacidad de Asustar Del Niño es: " + niños4.capacidadDeSusto());
-    System.out.println("La cantidad de Caramelos que tiene el niño: " + niños4.intentarAsustar(comunes));
-    System.out.println("El Niño come:  " + niños2.comer(0) + " Caramelos");
 
     ArrayList<Ninio> miembros = new ArrayList<>();
 
@@ -56,15 +44,23 @@ public class Main {
     miembros.add(new Ninio("Scott",4, gerogebush, maquillaje1, 10));
 
     Legion legion= new Legion(miembros);
-    legion.elegirLider(miembros);
-    legion.reportar();
-
-    System.out.println("\n");
-
-
-
-
-
+    try {
+      legion.reportar();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    System.out.println(" EL lider Tiene " + legion.getLider().getCaramelos() + " caramelos ");
+    legion.intentarAsustarA(comunes);
+    System.out.println(" EL lider Tiene " + legion.getLider().getCaramelos() + " caramelos ");
+    legion.intentarAsustarA(abuelos);
+    System.out.println(" EL lider Tiene " + legion.getLider().getCaramelos() + " caramelos ");
+    legion.intentarAsustarA(abuelos1);
+    System.out.println(" EL lider Tiene " + legion.getLider().getCaramelos() + " caramelos ");
+    legion.intentarAsustarA(abuelos2);
+    System.out.println(" EL lider Tiene " + legion.getLider().getCaramelos() + " caramelos ");
+    legion.intentarAsustarA(necios);
+    System.out.println(" EL lider Tiene " + legion.getLider().getCaramelos() + " caramelos ");
+    System.out.println(" cantidad de sustos registrados =  " + legion.sustosTotalesDados());
 
   }
 

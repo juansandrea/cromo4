@@ -1,11 +1,9 @@
 package com.main.entidades.Adultos;
 
-import com.main.entidades.Ninios.Ninio;
+
 
 public abstract class Adulto {
-  public Adulto(int tolerancia) {
-    this.tolerancia = tolerancia;
-  }
+
   private int tolerancia ;
 
   @Override
@@ -26,6 +24,6 @@ public abstract class Adulto {
   }
 
 
-  public abstract boolean recibirSusto(int fueAsustado);
+  public abstract int recibirSusto(int fueAsustado);
 
 }

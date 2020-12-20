@@ -1,6 +1,5 @@
 package com.main.entidades.Adultos;
 
-import com.main.entidades.Ninios.Ninio;
 
 public class Necio extends Adulto {
 
@@ -8,6 +7,7 @@ public class Necio extends Adulto {
   private int tolerancia;
 
   public Necio() {
+    this.tolerancia = 20;
 
   }
 
@@ -21,8 +21,7 @@ public class Necio extends Adulto {
   }
 
   @Override
-  public boolean recibirSusto(int fueAsustado) {
-
-    return false;
+  public int recibirSusto(int fueAsustado) {
+    return 0;
   }
 }

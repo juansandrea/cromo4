@@ -1,7 +1,5 @@
 package com.main.entidades.Adultos;
 
-import com.main.entidades.Ninios.Ninio;
-import sun.font.TrueTypeFont;
 
 public class Comune extends com.main.entidades.Adultos.Adulto {
 
@@ -10,6 +8,7 @@ public class Comune extends com.main.entidades.Adultos.Adulto {
   private int tolerancia ;
 
     public Comune() {
+      this.tolerancia = 20;
 
   }
 
@@ -22,11 +21,11 @@ public class Comune extends com.main.entidades.Adultos.Adulto {
   }
 
   @Override
-  public boolean recibirSusto(int fueAsustado) {
-     Ninio ninio = new Ninio();
-     if (ninio.capacidadDeSusto() > this.tolerancia)
-       tolerancia = ninio.getCaramelos()/2;
-      return true;
-
+    public int recibirSusto(int fueAsustado) {
+       if (fueAsustado > tolerancia) {
+         return tolerancia / 2;
+       } else {
+         return 0;
+       }
     }
 }

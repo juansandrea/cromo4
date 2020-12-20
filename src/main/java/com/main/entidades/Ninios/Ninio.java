@@ -24,11 +24,10 @@ public class Ninio {
     capacidadDeSusto();
   }
 
-  public Ninio(ArrayList<Ninio> miembros) {}
-
-  public Ninio() {
+  public Ninio(ArrayList<Ninio> miembros) {
 
   }
+
 
   public String getNombreniño() {
     return nombreniño;
@@ -81,19 +80,23 @@ public class Ninio {
     return totalSusto1;
   }
 
-  
 
 
-  public int intentarAsustar(Adulto adulto){
+  public void intentarAsustar(Adulto adulto){
+    int seasusto = adulto.recibirSusto(capacidadDeSusto());
+    if( seasusto > 0){
+      recibirCaramelos(seasusto);
+      System.out.println("se asusto El Adulto = " + seasusto +" "+ capacidadDeSusto());
+    } else {
+      System.out.println("no se asusto = " + seasusto+" "+ capacidadDeSusto());
+    }
 
-   return adulto.recibirSusto(1) ;
   }
 
 
-
-
-
-  public void recibirCaramelos(int cantidad){ }
+  public void recibirCaramelos(int cantidad){
+    this.caramelos += cantidad;
+  }
 
   public int comer(int cantidad)throws CaramelosInsuficientesException{
     if(this.caramelos < cantidad){

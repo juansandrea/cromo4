@@ -1,6 +1,5 @@
 package com.main.entidades.Adultos;
 
-import com.main.entidades.Ninios.Ninio;
 
 public class Abuelo extends com.main.entidades.Adultos.Adulto {
 
@@ -8,6 +7,7 @@ public class Abuelo extends com.main.entidades.Adultos.Adulto {
   private int tolerancia;
 
   public Abuelo() {
+    this.tolerancia = 20;
   }
 
 
@@ -21,9 +21,9 @@ public class Abuelo extends com.main.entidades.Adultos.Adulto {
   }
 
   @Override
-  public boolean recibirSusto(int fueAsustado) {
+  public int recibirSusto(int fueAsustado) {
 
-    return true;
+    return tolerancia / 4;
   }
 
 
